@@ -1,0 +1,14 @@
+In the below described method, the values from the method are being received by a struct which is supplying a copy of it to view the data.
+Any changes done by this method will only impact on that copy of data, not the original data.
+
+func (g greeter) greet()  {
+	fmt.Println(g.greeting,g.name)
+}
+
+Now, if we declare a pointer to the receiving struct, it will actually supply the original data and allow the method to make changes in it.
+This is because that since pointer reference is used instead of just the receiver name, the pointer actually is telling the receiver to make the method point to the original data. This way, the method get the full permissions to modify the data. So, the pointer is helping the method to use the original data by directly pointing to it instead of making a copy of it. This can be specifically used when we are dealing with large amounts of data and copying it would create some complication.
+
+func (g *greeter) greet() {
+	fmt.Println(g.greeting,g.name)
+	g.name="Vishu"
+}
