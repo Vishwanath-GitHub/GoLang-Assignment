@@ -1,0 +1,6 @@
+When we are creating an interface and declaring some functions in it, it is necessary to implement and use all of the functions declared.
+If we ommit some of the functions, GoLang will throw an error. An example is this if we don't use display():
+
+    per.display undefined (type person has no field or method display)
+    
+It is important to note that an interface is a contract that guarantees that a class implements all the properties and functions defined in the interface. However we don't have any classes in GoLang, interface is its replacement.
